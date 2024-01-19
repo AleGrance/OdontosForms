@@ -8,11 +8,13 @@ import { FormsModule } from '@angular/forms';
 
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
+import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EncuestaComponent
+    EncuestaComponent,
+    AuditoriaComponent
   ],
   imports: [
     BrowserModule,
