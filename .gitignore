@@ -46,3 +46,4 @@ firebase.json
 /.firebase
 /.angular
 /.vscode
+package-lock.json
