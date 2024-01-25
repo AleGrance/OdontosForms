@@ -10,12 +10,14 @@ import { provideToastr } from 'ngx-toastr';
 import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
 import { SatisfaccionComponent } from './pages/satisfaccion/satisfaccion.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GraciasComponent } from './pages/gracias/gracias.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuditoriaComponent,
-    SatisfaccionComponent
+    SatisfaccionComponent,
+    GraciasComponent
   ],
   imports: [
     BrowserModule,

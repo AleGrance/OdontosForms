@@ -507,7 +507,7 @@
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="ciudad" placeholder="name@example.com">
+          <input type="text" class="form-control" id="ciudad" placeholder="Asunción">
           <label for="floatingInput">Tu respuesta</label>
         </div>
       </blockquote>
@@ -522,7 +522,7 @@
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="ciudad" placeholder="name@example.com">
+          <input type="text" class="form-control" id="contacto" placeholder="0981234567">
           <label for="floatingInput">Tu respuesta</label>
         </div>
       </blockquote>
@@ -538,13 +538,13 @@
       <blockquote class="blockquote mb-0">
       <div class="col-md-6">
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="contratos" id="doce_si">
+          <input class="form-check-input" type="radio" name="contratos" id="doce_si" value="SI" [(ngModel)]="preg17">
           <label class="form-check-label" for="doce_si">
             SI
           </label>
         </div>
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="contratos" id="doce_no">
+          <input class="form-check-input" type="radio" name="contratos" id="doce_no" value="NO" [(ngModel)]="preg17">
           <label class="form-check-label" for="doce_no">
             NO
           </label>
@@ -563,13 +563,13 @@
       <blockquote class="blockquote mb-0">
       <div class="col-md-6">
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="agendar_ahora" id="agendar_ahora_si" (change)="onCheckAgendar($event)">
+          <input class="form-check-input" type="radio" name="agendar_ahora" id="agendar_ahora_si" (change)="onCheckAgendar($event)" value="SI" [(ngModel)]="preg18">
           <label class="form-check-label" for="agendar_ahora_si">
             SI
           </label>
         </div>
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="agendar_ahora" id="agendar_ahora_no">
+          <input class="form-check-input" type="radio" name="agendar_ahora" id="agendar_ahora_no" value="NO" [(ngModel)]="preg18">
           <label class="form-check-label" for="agendar_ahora_no">
             NO
           </label>
@@ -588,19 +588,19 @@
       <blockquote class="blockquote mb-0">
       <div class="col-md-6">
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="enterado" id="redes">
+          <input class="form-check-input" type="radio" name="enterado" id="redes" value="REDES SOCIALES" [(ngModel)]="preg19">
           <label class="form-check-label" for="redes">
             REDES SOCIALES
           </label>
         </div>
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="enterado" id="promo">
+          <input class="form-check-input" type="radio" name="enterado" id="promo" value="PROMOCION POR WhatsApp" [(ngModel)]="preg19">
           <label class="form-check-label" for="promo">
             PROMOCION POR WhatsApp
           </label>
         </div>
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="enterado" id="referido">
+          <input class="form-check-input" type="radio" name="enterado" id="referido" value="REFERIDO" [(ngModel)]="preg19">
           <label class="form-check-label" for="referido">
             REFERIDO
           </label>
@@ -619,43 +619,43 @@
       <blockquote class="blockquote mb-0">
       <div class="col-md-12">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox1" value="option1">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox1" value="1" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox1">1</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox2" value="option2">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox2" value="2" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox2">2</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox3" value="option3">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox3" value="3" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox3">3</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox4" value="option4">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox4" value="4" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox4">4</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox5" value="option5">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox5" value="5" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox5">5</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox6" value="option6">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox6" value="6" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox6">6</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox7" value="option7">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox7" value="7" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox7">7</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox8" value="option8">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox8" value="8" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox8">8</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox9" value="option9">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox9" value="9" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox9">9</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox10" value="option10">
+          <input class="form-check-input" type="radio" name="calificaciones" id="inlineCheckbox10" value="10" [(ngModel)]="preg20">
           <label class="form-check-label" for="inlineCheckbox10">10</label>
         </div>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 // Importar la API
 import { ApiService } from 'src/app/services/api.service';
 import { map } from 'rxjs';
@@ -15,7 +16,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./satisfaccion.component.css']
 })
 export class SatisfaccionComponent implements OnInit {
-  constructor(private toastr: ToastrService, private route: ActivatedRoute, private api: ApiService) { }
+  constructor(private toastr: ToastrService, private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
   public encuestaForm: any;
   public codTurno: any
@@ -28,10 +29,10 @@ export class SatisfaccionComponent implements OnInit {
   public preg10: any
   public preg11: any
   public preg12: any
-  public preg13: any
-  public preg14: any
-  public preg15: any
-  public preg16: any
+  // public preg13: any
+  // public preg14: any
+  // public preg15: any
+  // public preg16: any
   public preg17: any
   public preg18: any
   public preg19: any
@@ -73,6 +74,7 @@ export class SatisfaccionComponent implements OnInit {
 
           if (result.length > 0) {
             this.toastr.warning('Ya existe una encuesta cargada por el turno seleccionado.', 'Encuesta ya registrada.');
+            this.router.navigate(['/agradecimiento']);
           }
         })
       )
@@ -101,29 +103,54 @@ export class SatisfaccionComponent implements OnInit {
     //this.toastr.success('Datos guardados!', 'Listo!');
 
     const objEncuesta = {
-      p1: ((<HTMLInputElement>document.getElementById("cedula")).value),
-      p2: ((<HTMLInputElement>document.getElementById("ruc")).value),
-      p3: ((<HTMLInputElement>document.getElementById("email")).value),
-      p4: this.preg4,
-      p5: this.preg5,
-      p6: this.preg6,
-      p7: this.preg7,
-      p8: this.preg8,
-      p9: this.preg9,
-      p10: this.preg10,
-      //  p11  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p12  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p13  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p14  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p15  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p16  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p17  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p18  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p19  ((<HTMLInputElement>document.getElementById("ruc")).value);
-      //  p20  ((<HTMLInputElement>document.getElementById("ruc")).value);
+      pregunta1: ((<HTMLInputElement>document.getElementById("cedula")).value),
+      pregunta2: ((<HTMLInputElement>document.getElementById("ruc")).value),
+      pregunta3: ((<HTMLInputElement>document.getElementById("email")).value),
+      pregunta4: this.preg4,
+      pregunta5: this.preg5,
+      pregunta6: this.preg6,
+      pregunta7: this.preg7,
+      pregunta8: this.preg8,
+      pregunta9: this.preg9,
+      pregunta10: this.preg10,
+      pregunta11: this.preg11,
+      pregunta12: this.preg12,
+      pregunta13: ((<HTMLInputElement>document.getElementById("domicilio")).value),
+      pregunta14: ((<HTMLInputElement>document.getElementById("barrio")).value),
+      pregunta15: ((<HTMLInputElement>document.getElementById("ciudad")).value),
+      pregunta16: ((<HTMLInputElement>document.getElementById("contacto")).value),
+      pregunta17: this.preg17,
+      pregunta18: this.preg18,
+      pregunta19: this.preg19,
+      pregunta20: this.preg20,
+
+      COD_TURNO: this.codTurno,
+      user_id: 1
     }
 
     console.log(objEncuesta);
+
+    this.api.post('api/Encuesta_satisfaccion', objEncuesta)
+      .pipe(
+        map((result: any) => {
+          console.log(result);
+
+          if (result.COD_TURNO == this.codTurno) {
+            this.toastr.success('Encuesta registrada correctamente.', 'Gracias!');
+            this.router.navigate(['/agradecimiento']);
+          }
+        })
+      )
+      .subscribe({
+        // next(result: any) {
+        //   console.log(result);
+        // },
+        error(msg) {
+          console.log('Error al registrar la encuesta: ', msg.message);
+          return;
+        },
+      });
+
   }
 
   enviarDatos() {
