@@ -11,7 +11,7 @@
       * Indica que la pregunta es obligatoria
     </div>
   </div>
-  HOLAAAAA
+
   <!-- Pregunta 1 -->
   <div class="card pregunta">
     <div class="card-header">
@@ -20,7 +20,7 @@
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="cedula" placeholder="name@example.com">
+          <input type="text" class="form-control" id="cedula" placeholder="132546">
           <label for="floatingInput">Escriba su número de cédula</label>
         </div>
       </blockquote>
@@ -66,13 +66,13 @@
       <blockquote class="blockquote mb-0">
         <div class="col-md-6">
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="planes" id="plan_platino">
+            <input class="form-check-input" type="radio" name="planes" id="plan_platino" value="PLAN PLATINO" [(ngModel)]="preg4">
             <label class="form-check-label" for="plan_platino">
               PLAN PLATINO
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="planes" id="plan_plus_ortodon">
+            <input class="form-check-input" type="radio" name="planes" id="plan_plus_ortodon" value="PLAN PLUS + ORTODONCIA (Clásica)" [(ngModel)]="preg4">
             <label class="form-check-label" for="plan_plus_ortodon">
               PLAN PLUS + ORTODONCIA
             </label>
@@ -93,13 +93,13 @@
       <blockquote class="blockquote mb-0">
       <div class="col-md-6">
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cobertura" id="cobertura_si">
+          <input class="form-check-input" type="radio" name="cobertura" id="cobertura_si" value="SI" [(ngModel)]="preg5">
           <label class="form-check-label" for="cobertura_si">
             SI
           </label>
         </div>
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cobertura" id="cobertura_no">
+          <input class="form-check-input" type="radio" name="cobertura" id="cobertura_no" value="NO" [(ngModel)]="preg5">
           <label class="form-check-label" for="cobertura_no">
             NO
           </label>
@@ -118,13 +118,13 @@
       <blockquote class="blockquote mb-0">
       <div class="col-md-6">
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="casos" id="casos_si">
+          <input class="form-check-input" type="radio" name="casos" id="casos_si" value="SI" [(ngModel)]="preg6">
           <label class="form-check-label" for="casos_si">
             SI
           </label>
         </div>
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="casos" id="casos_no">
+          <input class="form-check-input" type="radio" name="casos" id="casos_no" value="NO" [(ngModel)]="preg6">
           <label class="form-check-label" for="casos_no">
             NO
           </label>
@@ -143,13 +143,13 @@
       <blockquote class="blockquote mb-0">
       <div class="col-md-6">
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cober_finan" id="cober_finan_si">
+          <input class="form-check-input" type="radio" name="cober_finan" id="cober_finan_si" value="SI" [(ngModel)]="preg7">
           <label class="form-check-label" for="cober_finan_si">
             SI
           </label>
         </div>
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cober_finan" id="cober_finan_no">
+          <input class="form-check-input" type="radio" name="cober_finan" id="cober_finan_no" value="NO" [(ngModel)]="preg7">
           <label class="form-check-label" for="cober_finan_no">
             NO
           </label>
@@ -168,13 +168,13 @@
       <blockquote class="blockquote mb-0">
         <div class="col-md-6">
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="copias" id="copia_si">
+            <input class="form-check-input" type="radio" name="copias" id="copia_si" value="SI" [(ngModel)]="preg8">
             <label class="form-check-label" for="copia_si">
               SI
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="copias" id="copia_no">
+            <input class="form-check-input" type="radio" name="copias" id="copia_no" value="NO" [(ngModel)]="preg8">
             <label class="form-check-label" for="copia_no">
               NO
             </label>
@@ -193,27 +193,27 @@
       <blockquote class="blockquote mb-0">
         <div class="col-md-6">
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="cuotas" id="m95">
+            <input class="form-check-input" type="radio" name="cuotas" id="m95" value="95000" [(ngModel)]="preg9">
             <label class="form-check-label" for="m95">
               95.000
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="cuotas" id="m120">
+            <input class="form-check-input" type="radio" name="cuotas" id="m120" value="120000" [(ngModel)]="preg9">
             <label class="form-check-label" for="m120">
               120.000
             </label>
           </div>
 
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="cuotas" id="m125">
+            <input class="form-check-input" type="radio" name="cuotas" id="m125" value="125000" [(ngModel)]="preg9">
             <label class="form-check-label" for="m125">
               125.000
             </label>
           </div>
 
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="cuotas" id="m157">
+            <input class="form-check-input" type="radio" name="cuotas" id="m157" value="157000" [(ngModel)]="preg9">
             <label class="form-check-label" for="m157">
               157.000
             </label>
@@ -221,37 +221,37 @@
 
 
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cuotas" id="m160">
+          <input class="form-check-input" type="radio" name="cuotas" id="m160" value="160000" [(ngModel)]="preg9">
           <label class="form-check-label" for="m160">
             160.000
           </label>
         </div>
 
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cuotas" id="m195">
+          <input class="form-check-input" type="radio" name="cuotas" id="m195" value="195000" [(ngModel)]="preg9">
           <label class="form-check-label" for="m195">
             195.000
           </label>
         </div>
 
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cuotas" id="m240">
+          <input class="form-check-input" type="radio" name="cuotas" id="m240" value="240000" [(ngModel)]="preg9">
           <label class="form-check-label" for="m240">
             240.000
           </label>
         </div>
 
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cuotas" id="m270">
+          <input class="form-check-input" type="radio" name="cuotas" id="m270" value="270000" [(ngModel)]="preg9">
           <label class="form-check-label" for="m270">
             270.000
           </label>
         </div>
 
         <div class="form-check form-check-reverse">
-          <input class="form-check-input" type="radio" name="cuotas" id="m_otros">
+          <!-- <input class="form-check-input" type="radio" name="cuotas" id="m_otros"> -->
           <label class="form-check-label" for="m_otros">
-            Otros <input type="text" name="" id="">
+            Otros <input type="text" name="" id="" [(ngModel)]="preg9">
           </label>
           <!-- <input type="text" class="form-control" name="" id=""> -->
         </div>
@@ -269,13 +269,13 @@
       <blockquote class="blockquote mb-0">
         <div class="col-md-6">
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="abonado" id="abono_si">
+            <input class="form-check-input" type="radio" name="abonado" id="abono_si" value="SI" [(ngModel)]="preg10">
             <label class="form-check-label" for="abono_si">
               SI
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="abonado" id="abono_no">
+            <input class="form-check-input" type="radio" name="abonado" id="abono_no" value="NO" [(ngModel)]="preg10">
             <label class="form-check-label" for="abono_no">
               NO
             </label>
@@ -294,13 +294,13 @@
       <blockquote class="blockquote mb-0">
         <div class="col-md-6">
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="inscripcion" id="inscripcion_si">
+            <input class="form-check-input" type="radio" name="inscripcion" id="inscripcion_si" value="SI" [(ngModel)]="preg11">
             <label class="form-check-label" for="inscripcion_si">
               SI
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="inscripcion" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="inscripcion" id="inscripcion_no" value="NO" [(ngModel)]="preg11">
             <label class="form-check-label" for="inscripcion_no">
               NO
             </label>
@@ -319,147 +319,147 @@
       <blockquote class="blockquote mb-0">
         <div class="col-md-6">
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_si">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_si" value="MARISCAL LOPEZ" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_si">
               MARISCAL LOPEZ
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="AVENIDA QUINTA" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               AVENIDA QUINTA
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="ARTIGAS" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               ARTIGAS
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="LUISITO" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               LUISITO
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="PALMA" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               PALMA
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="LAMBARE" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               LAMBARE
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="CATEDRAL" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               CATEDRAL
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="LUQUE" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               LUQUE
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="LA RURAL- PASEO ALAMEDA" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               LA RURAL- PASEO ALAMEDA
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="ÑEMBY" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               ÑEMBY
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="ITAGUA" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               ITAGUA
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="PASEO 1811" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               PASEO 1811
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="KM 14 Y MEDIO" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               KM 14 Y MEDIO
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="CAACUPE" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               CAACUPE
             </label>
           </div>
 
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="CORONEL OVIEDO" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               CORONEL OVIEDO
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="CAMPO 9" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               CAMPO 9
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="CAPIATA" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               CAPIATA
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="SANTANI" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               SANTANI
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="HOHENAU" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               HOHENAU
             </label>
           </div>
 
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="ENCARNACION" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               ENCARNACION
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="MARIA AUXILIADORA" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               MARIA AUXILIADORA
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="AYOLAS" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               AYOLAS
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="CDE-KM 7" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               CDE-KM 7
             </label>
           </div>
           <div class="form-check form-check-reverse">
-            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no">
+            <input class="form-check-input" type="radio" name="sucursales" id="inscripcion_no" value="SANTA RITA" [(ngModel)]="preg12">
             <label class="form-check-label" for="inscripcion_no">
               SANTA RITA
             </label>

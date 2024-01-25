@@ -3,23 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EncuestaComponent } from './pages/encuesta/encuesta.component';
 import { FormsModule } from '@angular/forms';
 
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
+import { SatisfaccionComponent } from './pages/satisfaccion/satisfaccion.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EncuestaComponent,
-    AuditoriaComponent
+    AuditoriaComponent,
+    SatisfaccionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimations(), // required animations providers

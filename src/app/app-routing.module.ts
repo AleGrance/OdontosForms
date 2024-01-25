@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EncuestaComponent } from './pages/encuesta/encuesta.component';
+import { SatisfaccionComponent } from './pages/satisfaccion/satisfaccion.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: '/encuesta/:param',
+  //   pathMatch: 'full'
+  // },
   {
-    path: '',
-    redirectTo: '/encuesta',
-    pathMatch: 'full'
-  },
-  {
-    path: 'encuesta', component: EncuestaComponent,
+    path: 'satisfaccion/:codtrn', component: SatisfaccionComponent,
     //canActivate: [AuthGuard]
   }
 ];
