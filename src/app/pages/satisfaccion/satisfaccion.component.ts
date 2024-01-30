@@ -42,10 +42,12 @@ export class SatisfaccionComponent implements OnInit {
     // Se obtiene el parametro cod_turno de la URL
     this.codTurno = this.route.snapshot.paramMap.get('codtrn');
 
-    console.log(parseInt(this.codTurno));
+    //console.log(parseInt(this.codTurno));
 
     // Check si el turno ya tiene una encuesta guardad
-    this.checkTurnoEncuesta()
+    if (this.codTurno) {
+      this.checkTurnoEncuesta();
+    }
 
     this.encuestaForm = new FormGroup({
       cedula: new FormControl("", [
@@ -100,7 +102,7 @@ export class SatisfaccionComponent implements OnInit {
   get email() { return this.encuestaForm.get('email'); };
 
   submit() {
-    //this.toastr.success('Datos guardados!', 'Listo!');
+    console.log('POST');
 
     const objEncuesta = {
       pregunta1: ((<HTMLInputElement>document.getElementById("cedula")).value),
@@ -131,31 +133,32 @@ export class SatisfaccionComponent implements OnInit {
     console.log(objEncuesta);
 
     this.api.post('api/Encuesta_satisfaccion', objEncuesta)
-      .pipe(
-        map((result: any) => {
-          console.log(result);
+      .subscribe(
+        (data) => {
+          // Manejar la respuesta exitosa aquí
+          console.log('Respuesta del servidor:', data);
 
-          if (result.COD_TURNO == this.codTurno) {
+          let result: any = data;
+
+          if (result.status === 'success') {
             this.toastr.success('Encuesta registrada correctamente.', 'Gracias!');
             this.router.navigate(['/agradecimiento']);
           }
-        })
-      )
-      .subscribe({
-        // next(result: any) {
-        //   console.log(result);
-        // },
-        error(msg) {
-          console.log('Error al registrar la encuesta: ', msg.message);
-          return;
-        },
-      });
 
+          if (result.status === 'error') {
+            this.toastr.error(result.body[0].message, 'Error');
+            //console.log('Error', result);
+          }
+        },
+        (error) => {
+          // Manejar el error aquí
+          console.error('Error en la solicitud POST:', error);
+          this.toastr.error(error.message, `Server ERROR: ${error.status}`);
+        }
+      );
   }
 
   enviarDatos() {
-    // NRO CI
-    let numeroCedula = document.getElementById('cedula');
     console.log('Enviar datos!');
     console.log('Cedula:');
   }

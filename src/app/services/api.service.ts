@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
   // Local WWA
-  url: string = 'http://localhost:44000';
-  //url: string = 'http://192.168.10.8:44000';
+  //url: string = 'http://localhost:44000';
+  url: string = 'http://192.168.10.8:44000';
 
   constructor(public http: HttpClient) { }
 

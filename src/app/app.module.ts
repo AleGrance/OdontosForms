@@ -11,19 +11,23 @@ import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
 import { SatisfaccionComponent } from './pages/satisfaccion/satisfaccion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GraciasComponent } from './pages/gracias/gracias.component';
+import { ReporteComponent } from './pages/reporte/reporte.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuditoriaComponent,
     SatisfaccionComponent,
-    GraciasComponent
+    GraciasComponent,
+    ReporteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgSelectModule
   ],
   providers: [
     provideAnimations(), // required animations providers
