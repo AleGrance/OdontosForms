@@ -43,10 +43,6 @@ export class ReporteSatisfaccionComponent implements OnInit {
   }
 
   getEncuestas() {
-    this.clientes = [];
-    this.sucursales = [];
-    this.carnets = [];
-
     this.api.get(`api/Encuestas_satisfaccion`)
       .pipe(
         map((result: any) => {
@@ -79,6 +75,10 @@ export class ReporteSatisfaccionComponent implements OnInit {
   }
 
   llenarSelects(result: any) {
+    this.clientes = [];
+    this.sucursales = [];
+    this.carnets = [];
+
     for (let item of result) {
       let itemCliente = {
         nombre: item.Turnos_satisfaccion.CLIENTE,
@@ -108,11 +108,6 @@ export class ReporteSatisfaccionComponent implements OnInit {
 
 
   buscar() {
-    this.encuestasObtenidas = [];
-    this.clientes = [];
-    this.sucursales = [];
-    this.carnets = [];
-
     console.log('buscar');
 
     this.fecha_desde = (<HTMLInputElement>document.getElementById('fecha_desde')).value;
@@ -147,32 +142,6 @@ export class ReporteSatisfaccionComponent implements OnInit {
       )
       .subscribe();
 
-    // this.api.get(`api/Encuestas_satisfaccion/cedula/${this.clienteSeleccionado}`)
-    //   .pipe(
-    //     map((result: any) => {
-    //       console.log(result);
-
-    //       if (result.length > 0) {
-    //         this.encuestasPorCliente = result;
-
-    //         this.encuestasObtenidas = result;
-    //       }
-    //     })
-    //   )
-    //   .subscribe({
-    //     // next(result: any) {
-    //     //   console.log(result);
-    //     // },
-    //     error(msg) {
-    //       alert(
-    //         'Error de conexión: ' +
-    //         msg.message +
-    //         'No se puede verificar el turno'
-    //       );
-    //       console.log('Error al verificar el turno: ', msg.message);
-    //       return;
-    //     },
-    //   });
   }
   /**
    *
@@ -219,6 +188,9 @@ export class ReporteSatisfaccionComponent implements OnInit {
     }
 
     this.encuestasObtenidas = encuestasFiltradas;
+
+    // Llenar selects
+    this.llenarSelects(encuestasFiltradas);
   }
 
   changeSucursales() {
@@ -235,6 +207,9 @@ export class ReporteSatisfaccionComponent implements OnInit {
     }
 
     this.encuestasObtenidas = encuestasFiltradas;
+
+    // Llenar selects
+    this.llenarSelects(encuestasFiltradas);
   }
 
   // Eventos change
@@ -252,5 +227,8 @@ export class ReporteSatisfaccionComponent implements OnInit {
     }
 
     this.encuestasObtenidas = encuestasFiltradas;
+
+    // Llenar selects
+    this.llenarSelects(encuestasFiltradas);
   }
 }
