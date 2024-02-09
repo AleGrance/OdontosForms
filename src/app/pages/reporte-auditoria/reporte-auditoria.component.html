@@ -1,9 +1,9 @@
 <!--Filtros de la busqueda-->
+<!-- Fila datos cliente -->
 <div class="row" style="margin: 8px">
   <div class="col-md-6">
     <label class="col-form-label-sm">Clientes</label>
-
-    <ng-select [(ngModel)]="clienteSeleccionado">
+    <ng-select [(ngModel)]="clienteSeleccionado" (clear)="clearResetTable()" (change)="changeClientes()">
       <ng-option *ngFor="let item of clientes" [value]="item.nro_documento"
         >{{ item.nombre }} - {{ item.nro_documento }}</ng-option
       >
@@ -24,7 +24,7 @@
   </div>
 
   <div class="col-md-2" style="padding-top: 30px">
-    <button type="button" class="btn btn-outline-success" (click)="buscar()">
+    <button type="button" class="btn btn-outline-primary" (click)="buscar()">
       Buscar
     </button>
   </div>
@@ -35,6 +35,8 @@
   <thead class="thead">
     <tr>
       <!-- Datos de la encuesta -->
+      <th class="text-right" scope="col">CI</th>
+      <th class="text-right" scope="col">Nombre</th>
       <th class="text-right" scope="col">CI</th>
       <th class="text-right" scope="col">Email*</th>
       <th class="text-right" scope="col" title="¿Qué plan eligió?">Item 4</th>
@@ -142,6 +144,9 @@
       <!-- Datos de la encuesta -->
       <td class="text-right">
         {{ item.pregunta1 }}
+      </td>
+      <td class="text-right">
+        {{ item.Clientes_auditorium.NOMBRE }} {{ item.Clientes_auditorium.APELLIDO }}
       </td>
       <td class="text-right">
         {{ item.pregunta3 }}

@@ -165,8 +165,6 @@ export class ReporteSatisfaccionComponent implements OnInit {
     this.enviadoresSeleccionados = [];
   }
 
-
-
   // Evento Clear
   clearResetTable() {
     console.log('CLEAR RESET TABLE');
@@ -212,7 +210,6 @@ export class ReporteSatisfaccionComponent implements OnInit {
     this.llenarSelects(encuestasFiltradas);
   }
 
-  // Eventos change
   changeCarnets() {
     console.log('CHANGE CARNETS');
 
