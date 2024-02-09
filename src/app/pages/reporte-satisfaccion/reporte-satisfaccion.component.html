@@ -1,0 +1,206 @@
+<!--Filtros de la busqueda-->
+<!-- Fila datos cliente -->
+<div class="row" style="margin: 8px">
+  <div class="col-md-4">
+    <label class="col-form-label-sm">Clientes</label>
+    <ng-select [(ngModel)]="clienteSeleccionado" (clear)="clearResetTable()" (change)="changeClientes()">
+      <ng-option *ngFor="let item of clientes" [value]="item.nombre"
+        >{{ item.nombre }}</ng-option
+      >
+    </ng-select>
+  </div>
+  <div class="col-md-4">
+    <label class="col-form-label-sm">Sucursales</label>
+    <ng-select [(ngModel)]="sucursalSeleccionada" (clear)="clearResetTable()" (change)="changeSucursales()">
+      <ng-option *ngFor="let item of sucursales" [value]="item"
+        >{{ item }}</ng-option
+      >
+    </ng-select>
+  </div>
+  <div class="col-md-4">
+    <label class="col-form-label-sm">Carnets</label>
+    <ng-select [(ngModel)]="carnetSeleccionado" (clear)="clearResetTable()" (change)="changeCarnets()">
+      <ng-option *ngFor="let item of carnets" [value]="item"
+        >{{ item }}</ng-option
+      >
+    </ng-select>
+  </div>
+
+</div>
+<!-- Fila datos fecha y boton -->
+<div class="row" style="margin: 8px">
+  <div class="col-md-2">
+    <label class="col-form-label-sm">Fecha desde</label>
+    <input
+      id="fecha_desde"
+      type="date"
+      class="form-control"
+      [(ngModel)]="fecha_desde"
+    />
+  </div>
+  <div class="col-md-2">
+    <label class="col-form-label-sm">Fecha hasta</label>
+    <input id="fecha_hasta" type="date" class="form-control" />
+  </div>
+  <div class="col-md-2" style="padding-top: 30px">
+    <button type="button" class="btn btn-outline-primary" (click)="buscar()">
+      Buscar
+    </button>
+  </div>
+  <div class="col-md-6"></div>
+</div>
+
+
+<!--Resultado de la busqueda-->
+<table class="table table-sm table-hover">
+  <thead class="thead">
+    <tr>
+      <!-- Datos deL turno -->
+      <th class="text-right" scope="col">Nombre</th>
+      <th class="text-right" scope="col">Carnet</th>
+      <th class="text-right" scope="col">Sucursal</th>
+      <th class="text-right" scope="col">Profesional</th>
+      <th class="text-right" scope="col">Fecha</th>
+
+      <!-- Datos de la encuesta -->
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Como calificaría usted la atención recibida por parte de la recepcionista?*"
+      >
+        Item 1
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Le explicaron que en algunos casos Odontos pagara la totalidad..."
+      >
+        Item 2
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title=" ¿Le explicaron que los tratamientos que no son de cobertura del 100%..."
+      >
+        Item 3
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Le entrego el vendedor una copia del contrato?"
+      >
+        Item 4
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Su cuota mensual a pagar será de monto guaraníes?"
+      >
+        Item 5
+      </th>
+      <th class="text-right" scope="col" title="¿Abono la primera cuota?">
+        Item 6
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Abono la cuota de inscripción?"
+      >
+        Item 7
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿En que sucursal va a asistir a su cita odontológica?"
+      >
+        Item 8
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Cuál es su domicilio y nro. de casa particular?"
+      >
+        Item 9
+      </th>
+      <th class="text-right" scope="col" title="¿Cuál es su barrio?">
+        Item 10
+      </th>
+      <th class="text-right" scope="col" title="¿Cuál es su ciudad?">
+        Item 11
+      </th>
+      <!-- <th class="text-right" scope="col"></th> -->
+    </tr>
+  </thead>
+  <tbody id="table-body" *ngIf="!loading">
+    <tr *ngFor="let item of encuestasObtenidas">
+      <!-- Datos del turno -->
+      <td class="text-right">
+        {{ item.Turnos_satisfaccion.CLIENTE }}
+      </td>
+      <td class="text-right">
+        {{ item.Turnos_satisfaccion.NRO_CERT }}
+      </td>
+      <td class="text-right">
+        {{ item.Turnos_satisfaccion.SUCURSAL }}
+      </td>
+      <td class="text-right">
+        {{ item.Turnos_satisfaccion.NOMBRE_COMERCIAL }}
+      </td>
+      <td class="text-right">
+        {{ item.Turnos_satisfaccion.FECHA }}
+      </td>
+
+      <!-- Datos de la encuesta -->
+      <td class="text-right">
+        {{ item.pregunta1 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta2 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta3 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta4 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta5 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta6 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta7 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta8 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta9 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta10 }}
+      </td>
+      <td class="text-right">
+        {{ item.pregunta11 }}
+      </td>
+
+      <!-- <td>
+        <button type="button" class="btn btn-outline-success">Ver Encuesta</button>
+      </td> -->
+    </tr>
+
+    <!-- <button class="float">
+      <fa-icon style="color: #28b463" [icon]="faFileExcel"></fa-icon>
+    </button> -->
+  </tbody>
+</table>
+
+<!-- Spinner -->
+<div class="col-md-12" id="spinner-historicos" *ngIf="loading">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden"></span>
+    </div>
+  </div>
+</div>

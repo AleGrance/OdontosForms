@@ -8,6 +8,7 @@ import { map } from 'rxjs';
 
 // Para obtener los parametros de la url
 import { ActivatedRoute } from '@angular/router';
+import { ApiSatisfaccionService } from 'src/app/services/api-satisfaccion.service';
 
 
 @Component({
@@ -16,10 +17,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./satisfaccion.component.css']
 })
 export class SatisfaccionComponent implements OnInit {
-  constructor(private toastr: ToastrService, private route: ActivatedRoute, private api: ApiService, private router: Router) { }
+  constructor(private toastr: ToastrService, private route: ActivatedRoute, private api: ApiSatisfaccionService, private router: Router) { }
 
   public encuestaForm: any;
   public codTurno: any
+  public preg1: any
+  public preg2: any
+  public preg3: any
   public preg4: any
   public preg5: any
   public preg6: any
@@ -28,15 +32,12 @@ export class SatisfaccionComponent implements OnInit {
   public preg9: any
   public preg10: any
   public preg11: any
-  public preg12: any
-  // public preg13: any
-  // public preg14: any
-  // public preg15: any
-  // public preg16: any
-  public preg17: any
-  public preg18: any
-  public preg19: any
-  public preg20: any
+
+  // Tiene ruc SI/NO
+  public hasRuc: boolean = false;
+
+  // Tiene sugerencia SI/NO
+  public hasSugeren: boolean = false;
 
   ngOnInit(): void {
     // Se obtiene el parametro cod_turno de la URL
@@ -69,7 +70,7 @@ export class SatisfaccionComponent implements OnInit {
   }
 
   checkTurnoEncuesta() {
-    this.api.get(`api/Encuesta_satisfaccion/${this.codTurno}`)
+    this.api.get(`api/Encuestas_satisfaccion/${this.codTurno}`)
       .pipe(
         map((result: any) => {
           console.log(result);
@@ -105,26 +106,17 @@ export class SatisfaccionComponent implements OnInit {
     console.log('POST');
 
     const objEncuesta = {
-      pregunta1: ((<HTMLInputElement>document.getElementById("cedula")).value),
-      pregunta2: ((<HTMLInputElement>document.getElementById("ruc")).value),
-      pregunta3: ((<HTMLInputElement>document.getElementById("email")).value),
+      pregunta1: this.preg1,
+      pregunta2: this.preg2,
+      pregunta3: this.preg3,
       pregunta4: this.preg4,
       pregunta5: this.preg5,
       pregunta6: this.preg6,
       pregunta7: this.preg7,
       pregunta8: this.preg8,
-      pregunta9: this.preg9,
+      pregunta9: this.hasSugeren ? ((<HTMLInputElement>document.getElementById("sugerencia")).value) : 'NO',
       pregunta10: this.preg10,
       pregunta11: this.preg11,
-      pregunta12: this.preg12,
-      pregunta13: ((<HTMLInputElement>document.getElementById("domicilio")).value),
-      pregunta14: ((<HTMLInputElement>document.getElementById("barrio")).value),
-      pregunta15: ((<HTMLInputElement>document.getElementById("ciudad")).value),
-      pregunta16: ((<HTMLInputElement>document.getElementById("contacto")).value),
-      pregunta17: this.preg17,
-      pregunta18: this.preg18,
-      pregunta19: this.preg19,
-      pregunta20: this.preg20,
 
       COD_TURNO: this.codTurno,
       user_id: 1
@@ -132,7 +124,7 @@ export class SatisfaccionComponent implements OnInit {
 
     console.log(objEncuesta);
 
-    this.api.post('api/Encuesta_satisfaccion', objEncuesta)
+    this.api.post('api/Encuestas_satisfaccion', objEncuesta)
       .subscribe(
         (data) => {
           // Manejar la respuesta exitosa aquí

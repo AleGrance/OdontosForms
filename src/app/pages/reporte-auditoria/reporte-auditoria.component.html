@@ -1,29 +1,29 @@
 <!--Filtros de la busqueda-->
 <div class="row" style="margin: 8px">
-  <div class="col-md-7">
+  <div class="col-md-6">
     <label class="col-form-label-sm">Clientes</label>
 
     <ng-select [(ngModel)]="clienteSeleccionado">
-      <ng-option *ngFor="let item of clientes" [value]="item.nro_documento">{{
-        item.nombre
-      }} - {{item.nro_documento}}</ng-option>
+      <ng-option *ngFor="let item of clientes" [value]="item.nro_documento"
+        >{{ item.nombre }} - {{ item.nro_documento }}</ng-option
+      >
     </ng-select>
   </div>
   <div class="col-md-2">
-    <!-- <label class="col-form-label-sm">Fecha desde</label>
+    <label class="col-form-label-sm">Fecha desde</label>
     <input
       id="fecha_desde"
       type="date"
       class="form-control"
       [(ngModel)]="fecha_desde"
-    /> -->
+    />
   </div>
   <div class="col-md-2">
-    <!-- <label class="col-form-label-sm">Fecha hasta</label>
-    <input id="fecha_hasta" type="date" class="form-control" /> -->
+    <label class="col-form-label-sm">Fecha hasta</label>
+    <input id="fecha_hasta" type="date" class="form-control" />
   </div>
 
-  <div style="padding-top: 37px">
+  <div class="col-md-2" style="padding-top: 30px">
     <button type="button" class="btn btn-outline-success" (click)="buscar()">
       Buscar
     </button>
@@ -34,77 +34,115 @@
 <table class="table table-sm table-hover">
   <thead class="thead">
     <tr>
-      <th class="text-right" scope="col">Profesional</th>
-      <th class="text-right" scope="col">Fecha de turno</th>
-      <th class="text-right" scope="col">Cliente</th>
-      <th class="text-right" scope="col">Nro. Documento</th>
-      <th class="text-right" scope="col">Carnet</th>
-      <!-- <th class="text-right" scope="col">Tratamiento</th> -->
-      <!-- <th class="text-right" scope="col">Usuario Asistio</th> -->
-      <th class="text-right" scope="col">Fecha/Hora Asistio</th>
-
       <!-- Datos de la encuesta -->
+      <th class="text-right" scope="col">CI</th>
       <th class="text-right" scope="col">Email*</th>
       <th class="text-right" scope="col" title="¿Qué plan eligió?">Item 4</th>
-      <th class="text-right" scope="col" title="¿Le explicaron la cobertura de su plan que incluye?*">Item 5</th>
-      <th class="text-right" scope="col" title="¿Le explicaron que en algunos casos Odontos pagara la totalidad...">
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Le explicaron la cobertura de su plan que incluye?*"
+      >
+        Item 5
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Le explicaron que en algunos casos Odontos pagara la totalidad..."
+      >
         Item 6
       </th>
-      <th class="text-right" scope="col" title=" ¿Le explicaron que los tratamientos que no son de cobertura del 100%...">
-       Item 7
+      <th
+        class="text-right"
+        scope="col"
+        title=" ¿Le explicaron que los tratamientos que no son de cobertura del 100%..."
+      >
+        Item 7
       </th>
-      <th class="text-right" scope="col" title="¿Le entrego el vendedor una copia del contrato?">
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Le entrego el vendedor una copia del contrato?"
+      >
         Item 8
       </th>
-      <th class="text-right" scope="col" title="¿Su cuota mensual a pagar será de monto guaraníes?">
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Su cuota mensual a pagar será de monto guaraníes?"
+      >
         Item 9
       </th>
-      <th class="text-right" scope="col" title="¿Abono la primera cuota?">Item 10</th>
-      <th class="text-right" scope="col" title="¿Abono la cuota de inscripción?">Item 11</th>
-      <th class="text-right" scope="col" title="¿En que sucursal va a asistir a su cita odontológica?">
+      <th class="text-right" scope="col" title="¿Abono la primera cuota?">
+        Item 10
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Abono la cuota de inscripción?"
+      >
+        Item 11
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿En que sucursal va a asistir a su cita odontológica?"
+      >
         Item 12
       </th>
-      <th class="text-right" scope="col" title="¿Cuál es su domicilio y nro. de casa particular?">
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Cuál es su domicilio y nro. de casa particular?"
+      >
         Item 13
       </th>
-      <th class="text-right" scope="col" title="¿Cuál es su barrio?">Item 14</th>
-      <th class="text-right" scope="col" title="¿Cuál es su ciudad?">Item 15</th>
-      <th class="text-right" scope="col" title="¿En caso de no poder contactarlo...">
+      <th class="text-right" scope="col" title="¿Cuál es su barrio?">
+        Item 14
+      </th>
+      <th class="text-right" scope="col" title="¿Cuál es su ciudad?">
+        Item 15
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿En caso de no poder contactarlo..."
+      >
         Item 16
       </th>
-      <th class="text-right" scope="col" title="¿Le explicaron que en su contrato...">
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Le explicaron que en su contrato..."
+      >
         Item 17
       </th>
-      <th class="text-right" scope="col" title="¿Desea agendar turno con...">Item 18</th>
-      <th class="text-right" scope="col" title="¿Como se enteró de nuestros servicios?">
+      <th class="text-right" scope="col" title="¿Desea agendar turno con...">
+        Item 18
+      </th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Como se enteró de nuestros servicios?"
+      >
         Item 19
       </th>
-      <th class="text-right" scope="col" title="¿Con que calificación puntuaría el servicio?">Item 20</th>
+      <th
+        class="text-right"
+        scope="col"
+        title="¿Con que calificación puntuaría el servicio?"
+      >
+        Item 20
+      </th>
       <!-- <th class="text-right" scope="col"></th> -->
     </tr>
   </thead>
   <tbody id="table-body" *ngIf="!loading">
     <tr *ngFor="let item of encuestasObtenidas">
-      <td class="text-right" scope="row">
-        {{ item.Turnos_satisfaccion.NOMBRE_COMERCIAL }}
-      </td>
-      <td class="text-right">
-        {{ item.Turnos_satisfaccion.FECHA }}
-      </td>
-      <td class="text-right">
-        {{ item.Turnos_satisfaccion.CLIENTE }}
-      </td>
+      <!-- Datos de la encuesta -->
       <td class="text-right">
         {{ item.pregunta1 }}
       </td>
-      <td class="text-right">
-        {{ item.Turnos_satisfaccion.NRO_CERT }}
-      </td>
-      <td class="text-right">
-        {{ item.Turnos_satisfaccion.FECHA }} {{ item.Turnos_satisfaccion.HORA }}
-      </td>
-
-      <!-- Datos de la encuesta -->
       <td class="text-right">
         {{ item.pregunta3 }}
       </td>

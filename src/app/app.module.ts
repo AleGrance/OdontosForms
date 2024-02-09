@@ -11,8 +11,9 @@ import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
 import { SatisfaccionComponent } from './pages/satisfaccion/satisfaccion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GraciasComponent } from './pages/gracias/gracias.component';
-import { ReporteComponent } from './pages/reporte/reporte.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ReporteAuditoriaComponent } from './pages/reporte-auditoria/reporte-auditoria.component';
+import { ReporteSatisfaccionComponent } from './pages/reporte-satisfaccion/reporte-satisfaccion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     AuditoriaComponent,
     SatisfaccionComponent,
     GraciasComponent,
-    ReporteComponent
+    ReporteAuditoriaComponent,
+    ReporteSatisfaccionComponent
   ],
   imports: [
     BrowserModule,

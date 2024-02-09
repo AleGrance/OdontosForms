@@ -4,10 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ApiAuditoriaService {
+
   // Local WWA
-  url: string = 'http://localhost:44000';
-  //url: string = 'http://192.168.10.8:44000';
+  //url: string = 'http://localhost:43000';
+  url: string = 'http://192.168.10.8:43000';
 
   constructor(public http: HttpClient) { }
 
